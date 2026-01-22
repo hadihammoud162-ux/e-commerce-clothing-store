@@ -1,0 +1,530 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+main {
+    padding: 20px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.image-container {
+    text-align: center; 
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About */
+#about {
+    background-color: #f9f9f9; 
+    padding: 50px; 
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+.about-content h2 {
+    color: #333; 
+    font-size: 28px;
+    margin-bottom: 20px; 
+}
+
+.about-content p {
+    color: #666;
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff; 
+    text-align: center; 
+    padding: 20px;
+}
+
+
+/* Modal style */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .cart-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart-items-modal li {
+    margin-bottom: 10px; 
+  }
+  
+  
+  .cart-items li:last-child {
+    margin-bottom: 0;
+  }
+  
+  #total-price-modal {
+    font-weight: bold;
+  }
+  
+
+  .allcolumns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .c {
+    flex: 0 0 20%;
+    position: relative;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .img {
+    width: 200px;
+    height: 300px;
+    transition: transform 0.2s;
+  }
+
+  .img:hover {
+    transform: scale(1.1);
+  }
+
+  .p1 {
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .add-to-cart,
+  .remove-from-cart {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+  }
+
+  .remove-from-cart {
+    background-color: #f44336;
+    left: 60%;
+  }
+
+  .c:hover .add-to-cart,
+  .c:hover .remove-from-cart {
+    display: block;
+  }
+
+  .cart-summary {
+    float: right;
+    margin-right: 20px;
+  }
+
+  .cart-summary .cart-items {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .cart-summary .cart-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Modal style */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+#loginModal input[type=text],
+#loginModal input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+#loginModal button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#loginModal button:hover {
+    opacity: 0.8;
+}
+
+
+#loginModal .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+
+#loginModal .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+#loginModal img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+#loginModal .container {
+    padding: 16px;
+}
+
+#loginModal span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+#loginModal .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+#loginModal .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+/* The Close Button */
+#loginModal .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#loginModal .close:hover,
+#loginModal .close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    #loginModal span.psw {
+        display: block;
+        float: none;
+    }
+    #loginModal .cancelbtn {
+        width: 100%;
+    }
+}
+
+
+/*Signup*/
+
+#signupModal input[type=email],
+#signupModal input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+#signupModal input[type=email]:focus, 
+#signupModal input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+#signupModal button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+#signupModal button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+#signupModal .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+#signupModal .cancelbtn, 
+#signupModal .signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+#signupModal .container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+#signupModal .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+#signupModal .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+/* Style the horizontal ruler */
+#signupModal hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+#signupModal .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+#signupModal .close:hover,
+#signupModal .close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+
+#signupModal .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+@media screen and (max-width: 300px) {
+    #signupModal .cancelbtn, 
+    #signupModal .signupbtn {
+        width: 100%;
+    }
+}
+
+nav ul li a .fas {
+    font-size: 1.2em; 
+  }
+
+  #clear-cart-button {
+    background-color: #f44336; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+  }
+  
+  #clear-cart-button:hover {
+    background-color: #d32f2f; 
+  }
+  
+
+  #place-order-button {
+    background-color: #4caf50; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+#place-order-button:hover {
+    background-color: #388e3c; 
+}
